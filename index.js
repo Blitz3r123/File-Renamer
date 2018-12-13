@@ -56,12 +56,14 @@ fs.readdir(__dirname + '/files/', (error, data) => {
 			pdfFiles[i] = pdfFiles[i].substring(0, startIndex) + '.pdf';
 		}
 
-		// Get rid of all fileprefixes in the front of the names
-		// Example:
-		// OOAD - test.pdf becomes test.pdf
-		while(pdfFiles[i].substring(0, fileprefix.length + 2) === fileprefix + ' -'){
-			pdfFiles[i] = pdfFiles[i].substring(fileprefix.length + 3, pdfFiles[i].length);
-		}
+		if(fileprefix !== ''){
+			// Get rid of all fileprefixes in the front of the names which will be added later on
+			// Example:
+			// OOAD - test.pdf becomes test.pdf
+			while(pdfFiles[i].substring(0, fileprefix.length + 2) === fileprefix + ' -'){
+				pdfFiles[i] = pdfFiles[i].substring(fileprefix.length + 3, pdfFiles[i].length);
+			}	
+		}		
 
 		// if the file has lecture in its name capitalise it
 		// Example:
