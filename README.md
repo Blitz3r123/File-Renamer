@@ -14,3 +14,19 @@ This is basically a script that makes your filenames nice and tidy.
 - Only affects pdf files
 - Has the option to take in the argument 'fileprefix' when running the node script which will be added to all file names
 - Capitalises the words Lecture and Tutorial
+
+## Explanation of the code:
+`const fs = require('fs');`
+Here I am using the file system module from Node.js to work on files.
+
+`var argv = require('minimist')(process.argv.slice(2));`
+This is line of code is for taking in the arguments when executing the script.
+
+```
+if(argv.fileprefix !== null){
+	var fileprefix = argv.fileprefix;
+}
+```
+Here I am just checking if the user has passed an argument for the fileprefix argument.
+
+
