@@ -1,0 +1,60 @@
+function promptUser(message, my_function()){
+	System.out.println(message);
+	return my_function();
+}
+
+function connectToCloud(){
+
+}
+
+function findShoppingList(ShoppingListID){
+
+}
+
+function scanDeliveredItems(){
+	for(each item){
+		scanBarcode();
+		storeBarcode();
+		session.matchingFound = false;
+		for(each item in fridge memory){
+			session.item = item;
+			if(session.item.barcode == session.barcode){
+				session.item.qty = promptUser("Enter Quantity: ", getQuantity());
+				session.matchingFound = true;
+			}else{
+				Item new_item = new Item(findItemByBarcode(session.barcode));
+				new_item.qty = 0;
+				session.item = new_item;
+				session.item.qty = promptUser("Enter Quantity: ", getQuantity());
+			}
+		}
+	}
+}
+
+function copyShoppingList(){
+
+}
+
+function updateShoppingList(items){
+	for(each item in items){
+		cloudStorage.item = item;
+	}
+}
+
+function deleteProcessedShoppingList(){
+
+}
+
+function disconnectFromCloud(){
+
+}
+
+function resetSessionVariables(){
+	session.item = null;
+	session.barcode = null;
+	session.matchingFound = null;
+}
+
+function informUser(message){
+	System.out.println(message);
+}

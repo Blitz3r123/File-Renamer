@@ -1,0 +1,32 @@
+// package Ordering;
+
+Class AutoPreferences{
+	private String dayWeek;
+	private time deliveryTime;
+	private URL PaymentURL;
+	private String authenticationToken;
+
+	function addSupermarket(){
+
+	}
+
+	function getDayWeek(){
+		return dayWeek;
+	}
+
+	function getDeliveryTime(){
+		return deliveryTime;
+	}
+
+	function getPaymentURL(){
+		return PaymentURL;
+	}
+
+	function getAuthenticationToken(){
+		return authenticationToken;
+	}
+
+	function setDayWeek(day: String){
+		this.dayWeek = dayWeek;
+	}
+}

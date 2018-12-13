@@ -1,0 +1,23 @@
+// Package Reports
+
+Class Report{
+	private Date startDate;
+	private Date endDate;
+	private String[] contents;
+
+	function generate(){
+		
+	}
+
+	function view(){
+
+	}
+
+	function store(){
+
+	}
+
+	function email(){
+		
+	}
+}

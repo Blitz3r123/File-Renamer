@@ -1,0 +1,729 @@
+ hello internet and welcome to part 8 of
+00:02
+my UML 2 video tutorial today we're
+00:04
+going to talk about state machine and
+00:06
+package diagrams and pretty much wrap up
+00:09
+the meat of all the syntax behind
+00:12
+creating UML system models now state
+00:15
+machine diagrams model the changing
+00:18
+states of objects and the events that
+00:20
+cause these state changes and a state
+00:22
+diagram is going to show many different
+00:24
+things as we go through here but what I
+00:26
+got here on the screen is going to show
+00:27
+States and transitions and this whole
+00:31
+entire image and everything can be used
+00:33
+as a cheat sheet and it's available
+00:34
+underneath the video in a link now
+00:36
+transitions which is what these guys are
+00:39
+these arrows here going backwards and
+00:42
+forwards are going to represent how
+00:44
+states change and this is a state has
+00:47
+card and this is another state no card
+00:49
+and I'm using my common ATM sort of
+00:51
+thing to diagram all this stuff now the
+00:53
+events that occur like eject card and
+00:57
+card entered are going to trigger state
+00:59
+changes and these events are going to be
+01:02
+written across the transition arrows now
+01:06
+States and transitions are often listed
+01:08
+in a table format like you see here and
+01:10
+you're just going to list state and
+01:12
+trigger and then across the top you're
+01:14
+going to list your events and then
+01:16
+you're going to show how the individual
+01:19
+events are going to change the
+01:21
+individual States just as you can see
+01:23
+here no card now if a card is entered it
+01:26
+is then going to change to the new state
+01:29
+which is going to be has card so if you
+01:31
+prefer to list them in table form you
+01:33
+can do that however that is not quite so
+01:35
+common and state diagrams are normally
+01:37
+going to have an initial state like you
+01:40
+can see here and this is how you would
+01:41
+document that as well as a final state
+01:44
+and you're going to be able to document
+01:46
+behaviors that occur whenever you are
+01:49
+currently in a state by just listing do
+01:52
+with a little slash and then documenting
+01:54
+exactly what is going on wow your system
+01:57
+is in the state called verify funds it
+02:00
+is going to be verifying checking funds
+02:03
+in this situation and this is referred
+02:05
+to as a do behavior now transition
+02:07
+arrows can be a lot more complicated
+02:09
+like I said before they can have
+02:11
+descriptions and these descriptions
+02:14
+can be quite verbose and you can also
+02:16
+see here that we can self call our
+02:19
+states just by drawing arrows like we
+02:21
+have done in previous UML diagrams and
+02:24
+basically with these transitions that we
+02:27
+are going to be documenting here we're
+02:29
+going to first list a trigger and that
+02:32
+trigger is going to be the thing that
+02:33
+moves us from the request fund state to
+02:36
+the process request state so that's the
+02:39
+very first thing you know list then
+02:40
+you're going to list a guard statement
+02:42
+and the guard is going to be a boolean
+02:45
+condition of some sort or other that
+02:47
+either allows or blocks a transition so
+02:49
+you can see here if the requested funds
+02:51
+are less than or equal to the funds
+02:53
+available it's going to then move on to
+02:55
+process the request however if the
+02:58
+request for funds is greater than funds
+03:00
+available it's going to say now we can't
+03:02
+do that and it's going to again ask them
+03:04
+to request the funds that they want and
+03:06
+then finally you're going to have the
+03:08
+transitional behavior and this is going
+03:10
+to be the behavior that occurs as you
+03:13
+transition to the next state and things
+03:16
+like passing values for processing and
+03:18
+so forth are listed in this situation so
+03:21
+what we're doing here is passing the
+03:23
+actual requested amount that the user is
+03:25
+asking for and then that is going to be
+03:27
+processed over here in this current
+03:29
+state and then you're going to come to
+03:30
+your final state right here after the
+03:33
+request has been processed so that's
+03:35
+kind of a complicated transitional arrow
+03:37
+and then this is a couple other examples
+03:39
+of different state machine diagrams you
+03:41
+can have here you could also just put in
+03:43
+card valid and this is either going to
+03:45
+come back as true or false and if it
+03:47
+would come back in false in this
+03:48
+situation that's where you would come
+03:50
+back and request again another card and
+03:53
+then verify the funds inside of the
+03:55
+state description and then this is what
+03:57
+you're going to be asking for ask for
+03:58
+valid card however if the pin was
+04:00
+entered and the card was verified we
+04:03
+would come down here and verify that the
+04:05
+card in the pin that was entered
+04:07
+properly and so forth and so on until we
+04:09
+finally get down to request funds and
+04:11
+process the request and another state
+04:14
+machine diagram would be this guy right
+04:15
+here which is a little bit more
+04:16
+complicated here's the initial state
+04:18
+point and then we're going to get to
+04:20
+this part here and we're going to ask
+04:21
+our funds available and this is going to
+04:24
+make a request if the request is less
+04:26
+than or equal to funds available
+04:27
+then we're going to come over here and
+04:29
+provide the funds then at that point if
+04:31
+funds available is less than or equal to
+04:33
+zero we're going to come down here to no
+04:35
+funds but in most situations you're not
+04:37
+going to get less than or equal to
+04:38
+because of this guy up here and if funds
+04:41
+available is greater than or equal to
+04:42
+zero in this situation it's going to hit
+04:44
+this state and then bounce back over to
+04:46
+the funds available state so you can see
+04:47
+how you can bounce around and then
+04:49
+finally refused the transaction
+04:51
+altogether if the request is greater
+04:52
+than funds available so this is just
+04:54
+another way that you can document a
+04:56
+state machine diagram and lay everything
+04:58
+out it's kind of flexible but basically
+05:00
+you're just using States transition
+05:02
+arrows transition descriptions and in
+05:04
+some situations you're also going to
+05:06
+have state do behaviors like I said
+05:08
+before now there's other types of State
+05:10
+internal behavior as we scroll round
+05:13
+here and that is just simply called
+05:14
+state internal behavior and in this
+05:16
+situation we're going to put both an
+05:18
+entry point which is what's going to
+05:20
+happen when we reach this a verify card
+05:22
+state we're going to receive the card
+05:24
+and then we're going to check if the
+05:26
+card is valid and then after we have
+05:28
+checked if the card is valid we're going
+05:30
+to put an exit statement inside of here
+05:32
+all these things going to be handled
+05:34
+inside of the state you don't want
+05:36
+anything in here as an internal behavior
+05:37
+that's going to occur in any way outside
+05:40
+of the state you're going to inform the
+05:42
+customer in this situation whether the
+05:43
+card is verified or not and then you
+05:45
+have internal transitions and these are
+05:48
+going to cause something to happen but
+05:50
+they do not just like these guys up here
+05:53
+change or force the user to leave the
+05:56
+state itself
+05:57
+you always want to use transitions to
+05:59
+leave the state these guys here are
+06:01
+going to be actions that are performed
+06:02
+whenever you are currently in the state
+06:05
+so in this situation we're going to tell
+06:07
+the customer if the card is valid or not
+06:09
+and again we're going to use the same
+06:11
+format trigger which the trigger in this
+06:13
+situation would be we found out that the
+06:16
+card is either valid or invalid and in
+06:18
+this situation this would be the guard
+06:19
+behavior which is either gone back as
+06:21
+true or false and then we're going to
+06:23
+tell the customer whether the card is
+06:24
+valid or not so that's an example of an
+06:26
+internal transition and you can see that
+06:28
+over here internal transitions trigger
+06:30
+guard and behavior exactly the same
+06:32
+format as you use with transition arrows
+06:34
+and then you have what are called
+06:36
+composite States and they're going to
+06:38
+occur whenever you have two or more
+06:40
+states that are active
+06:41
+one time and each of these composite
+06:43
+states are called sub states as you can
+06:45
+see labeled right there and in this
+06:47
+situation you're going to call this guy
+06:49
+verify card and in this situation let's
+06:52
+say we wanted to verify the card as well
+06:54
+as verify the pin at the same time which
+06:56
+is definitely something that could occur
+06:58
+well we're going to have a transition
+07:00
+arrow coming in here and these two sub
+07:03
+states are going to be divided into
+07:05
+regions using a dashed line just like
+07:08
+that and then inside of here we're also
+07:10
+going to have two totally different do
+07:12
+behaviors occurring this one's going to
+07:14
+be verifying the card itself and this is
+07:16
+going to be verifying the pin and then
+07:17
+after those two are done we're then
+07:19
+going to come down here and pull it card
+07:21
+validated to transition to the next
+07:23
+point and you could also draw two arrows
+07:25
+out of here and then fork them together
+07:27
+into one arrow if you'd prefer to do
+07:29
+that and you could also do the same
+07:31
+exact thing we're we're also going to
+07:33
+have a fork that is going to fork into
+07:34
+these two guys if you don't want to use
+07:36
+just one arrow
+07:37
+either way it's completely up to you
+07:38
+then we're going to have choice facade O
+07:40
+States and they're going to be used
+07:42
+whenever a boolean condition is going to
+07:44
+determine the transition that takes
+07:46
+place so here what we're doing is
+07:48
+verifying the card and this is the guy
+07:51
+that represents the boolean condition
+07:53
+that's going to transition to this
+07:55
+transition or this transition depending
+07:57
+on if the card is valid or not so if the
+08:00
+card is not valid that comes back is
+08:02
+true and that's going to send it back
+08:04
+here and ask them for another card and
+08:05
+in this situation where the card is
+08:07
+valid we're then going to come over and
+08:09
+verify the pin so that's how you would
+08:11
+put in different transitions based off
+08:13
+of boolean conditions if you'd like to
+08:14
+lay it out that way and then the final
+08:16
+thing or diagramming signals again
+08:19
+here's initial state so let's just move
+08:21
+that out of here and here you're going
+08:22
+to represent triggers with either a
+08:25
+receive signal icon which is what this
+08:27
+guy is pin entered and then represent
+08:30
+transition behavior with a send signal
+08:33
+which is this one account information
+08:35
+request so they're going to come in here
+08:37
+your system is going to be in the state
+08:39
+of request pin a pin is going to be
+08:41
+entered which this is going to represent
+08:43
+a trigger or receive icon signal
+08:46
+whatever you want to call it I'm going
+08:47
+to come down here and if the pins valid
+08:49
+we're going going to move on to our send
+08:52
+signal which means that informations
+08:54
+then
+08:55
+going to be sending to this transition
+08:57
+state which is request account type and
+08:59
+for the most part that's all you need to
+09:01
+know about state machine diagrams so I'm
+09:03
+going to get into more things here as
+09:05
+the tutorial goes on but this is more
+09:07
+than the basics now we get to package
+09:10
+diagrams and this is extremely
+09:11
+simplistic which is the reason why I
+09:13
+tacked it onto the end of this tutorial
+09:15
+packages are going to group similar
+09:17
+classes and I'm sure if you've been
+09:19
+programming you know that and package
+09:20
+diagrams are used to show dependencies
+09:23
+between classes and the symbol for a
+09:26
+package is just going to be a simple
+09:27
+folder like this and you can either put
+09:30
+the name of the package inside of the
+09:32
+folder or as you see here you can put it
+09:35
+on the tab outside of the folder and the
+09:37
+contents of the package can be drawn
+09:39
+directly inside of the package and this
+09:42
+would be a class product description
+09:44
+that is public which you can see because
+09:46
+of the plus sign and this is going to be
+09:48
+a private class inside of the package
+09:50
+which you can see because there is a
+09:52
+negative sign you could also have these
+09:54
+classes listed as external to the
+09:57
+package just by doing exactly what you
+09:59
+see here and of course you could put
+10:01
+public or private on there if you wanted
+10:03
+to and if you'd like to document that a
+10:06
+package is contained inside of a package
+10:08
+like a catalog package may contain
+10:10
+another package called product that's
+10:13
+exactly how you would label that now it
+10:15
+is very common to document packages with
+10:17
+a name which is called URL in Reverse
+10:20
+packaging in this situation with my
+10:22
+website I would put com new think-tank
+10:24
+and then whatever the package name would
+10:26
+be and this is exactly how you would
+10:28
+document that however you could also
+10:30
+document it in other ways which is like
+10:32
+this just putting com two colons new
+10:35
+think-tank two colons and products
+10:36
+inside of there so there's two different
+10:39
+ways to document a URL in Reverse
+10:41
+package and then on top of that you're
+10:43
+going to be able to show that a class
+10:45
+belongs to a package if you wanted to do
+10:47
+that exactly like this just listing the
+10:49
+class name and then the package name
+10:51
+inside of braces right here or you could
+10:54
+just put in product two colons and
+10:56
+product description like we have here so
+10:58
+in this situation you would put the
+11:00
+package name followed by two colons and
+11:02
+the class name like that
+11:03
+if that is preferred it is preferred in
+11:06
+this situation that you would actually
+11:07
+name
+11:09
+all of your classes with first the
+11:11
+package name followed by the class name
+11:12
+just in case you end up having packages
+11:15
+with exactly the same class name just to
+11:17
+avoid any confusion that might come from
+11:19
+that so let's say if we had a product
+11:20
+description in a package other than
+11:23
+product we would easily be able to tell
+11:25
+which class we are actually referring to
+11:27
+in that situation and because this comes
+11:29
+up a lot just so you know classes in the
+11:31
+same package are said to be in or part
+11:35
+of the same namespace now if you want to
+11:37
+show that one package depends on another
+11:40
+package you can draw a dependency arrow
+11:43
+to it and there's a couple different
+11:45
+types of dependency arrows you can show
+11:46
+that one package imports another just
+11:49
+simply by listing one package and
+11:51
+putting import inside of braces like
+11:53
+that and putting a dependency error
+11:55
+you could also show that one package is
+11:57
+going to import a class from another
+11:59
+package just by pointing directly at
+12:02
+that class and just be aware that
+12:04
+whenever you're importing these packages
+12:06
+whether they be individual classes or
+12:08
+whole entire packages you're only going
+12:10
+to have access or be able to import
+12:12
+those public parts of the package and
+12:15
+you're not going to have access to the
+12:16
+other ones now if we would have merge
+12:19
+like we have in this situation this is
+12:21
+going to allow you to merge two packages
+12:23
+that are hopefully related into a new
+12:26
+package just like that and the final way
+12:29
+of importing packages for the most part
+12:31
+the most common ways anyway is to use
+12:34
+the access dependency era and this is
+12:37
+going to be used if the imported package
+12:38
+should have private visibility so there
+12:42
+is pretty much everything you could ever
+12:44
+want to know about package diagrams and
+12:46
+state machine diagrams a lot more real
+12:49
+world examples are going to be coming
+12:51
+very very very soon
+12:52
+so leave any questions or comments below
+12:54
+of the last till next time
