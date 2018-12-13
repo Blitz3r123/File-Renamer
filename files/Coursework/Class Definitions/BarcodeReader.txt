@@ -1,7 +1,0 @@
-// Package Fridge_Core
-
-Class BarcodeReader{
-	function scan(){
-		return barCode;
-	}
-}

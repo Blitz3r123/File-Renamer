@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "nodemon": "^1.18.8"
+  },
+  "devDependencies": {
+    "minimist": "^1.2.0"
   }
 }
