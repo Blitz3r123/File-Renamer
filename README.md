@@ -17,9 +17,11 @@ This is basically a script that makes your filenames nice and tidy.
 
 ## Explanation of the code:
 `const fs = require('fs');`
+
 Here I am using the file system module from Node.js to work on files.
 
 `var argv = require('minimist')(process.argv.slice(2));`
+
 This is line of code is for taking in the arguments when executing the script.
 
 ```
