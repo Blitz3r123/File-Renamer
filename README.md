@@ -24,7 +24,7 @@ Here I am using the file system module from Node.js to work on files.
 
 This is line of code is for taking in the arguments when executing the script.
 
-```
+```javascript
 if(argv.fileprefix !== null){
 	var fileprefix = argv.fileprefix;
 }
@@ -32,7 +32,7 @@ if(argv.fileprefix !== null){
 
 Here I am just checking if the user has passed an argument for the fileprefix argument.
 
-```
+```javascript
 function displayDir(path){
 	fs.readdir(path, (error, data) => {
 		if(error){
