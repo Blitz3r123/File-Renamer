@@ -50,7 +50,7 @@ function displayDir(path){
 
 This function basically just displays whats in the directory of the path passed as an argument.
 
-```
+```javascript
 function displayArray(array){
 	if(array.length >= 0){
 		for(var i = 0; i < array.length; i++){
@@ -64,20 +64,20 @@ function displayArray(array){
 
 This function displays the contents of an array passed to it as an argument.
 
-```
+```javascript
 fs.readdir(__dirname + '/files/', (error, data) => {
 ```
 
 Welcome to the meat of this script!
 
-```
+```javascript
 var pdfFiles = [];
 var oldPdfFiles = [];
 ```
 
 Just creating two arrays. One to store all the pdf files and another to view changes made to these files.
 
-```
+```javascript
 for(var i = 0; i < data.length; i++){
 		if(data[i].slice(-4) === '.pdf'){
 			pdfFiles.push(data[i]);
@@ -92,7 +92,7 @@ Here the files are being copied to both arrays. Also, there is validation here t
 
 Entering this for loop enters the formatting of the file names.
 
-```
+```javascript
 var regex = /\([0-9]\)/;
 if(regex.test(pdfFiles[i])){
 	var startIndex = pdfFiles[i].indexOf('(');
@@ -102,7 +102,7 @@ if(regex.test(pdfFiles[i])){
 
 Creating a regular expression to check for a ( followed by a number followed by a ). This piece of code then checks where the regular expression is found and deletes it. Bare in mind, if (1) was found in the middle of the name everything after the (1) would be deleted.
 
-```
+```javascript
 if(fileprefix !== ''){
 	while(pdfFiles[i].substring(0, fileprefix.length + 2) === fileprefix + ' -'){
 		pdfFiles[i] = pdfFiles[i].substring(fileprefix.length + 3, pdfFiles[i].length);
@@ -112,7 +112,7 @@ if(fileprefix !== ''){
 
 Here the files are checked for the fileprefix so that it isn't duplicated when the file prefix is added later.
 
-```
+```javascript
 if(pdfFiles[i].includes('lecture')){
 	pdfFiles[i] = pdfFiles[i].replace('lecture', 'Lecture');
 }
@@ -123,7 +123,7 @@ if(pdfFiles[i].includes('tutorial')){
 
 Here, it's pretty self explanatory, the words lecture and tutorial are being replaced by capitalised versions of the words.
 
-```
+```javascript
 while(pdfFiles[i].includes('_')){
 	pdfFiles[i] = pdfFiles[i].replace('_', ' ');
 }
@@ -131,7 +131,7 @@ while(pdfFiles[i].includes('_')){
 
 Here all underscores are replaced with a space.
 
-```
+```javascript
 if(fileprefix !== ''){
 	fs.rename(__dirname + '/files/' + oldPdfFiles[i], __dirname + '/files/' + fileprefix + ' - ' + pdfFiles[i], (err) => {
 		if (err)
